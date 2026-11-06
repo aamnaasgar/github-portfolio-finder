@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="githubApp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>GitHub Portfolio Finder</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script src="./app.js"></script>
+</head>
+
+<body ng-controller="AppController">
+
+    <h1>GitHub Portfolio Finder</h1>
+
+    <form ng-submit="searchUser()">
+
+        <input
+            type="text"
+            ng-model="username"
+            placeholder="Type a GitHub username (e.g., gaearon)..."
+        >
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    <p ng-if="errorMessage">
+        {{errorMessage}}
+    </p>
+
+    <user-portfolio
+        profile="userProfile"
+        repos="userRepos">
+    </user-portfolio>
+
+</body>
+</html>

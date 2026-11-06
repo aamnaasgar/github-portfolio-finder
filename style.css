@@ -1,0 +1,447 @@
+
+/* =====================================
+   1. GENERAL STYLING
+
+body {
+    background-color: black !important;
+    color: white !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+    color: #f1f5f9;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+
+/* =====================================
+   2. MAIN HEADING
+===================================== */
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+
+/* =====================================
+   3. SEARCH FORM
+===================================== */
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 30px auto;
+    max-width: 650px;
+}
+
+
+/* Search Input */
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px 18px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]::placeholder {
+    color: #94a3b8;
+}
+
+input[type="text"]:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+
+/* Search Button */
+
+button {
+    padding: 15px 28px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =====================================
+   4. ERROR MESSAGE
+===================================== */
+
+p[ng-if="errorMessage"] {
+    text-align: center;
+    color: #fca5a5;
+    background: rgba(127, 29, 29, 0.25);
+    border: 1px solid rgba(248, 113, 113, 0.35);
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+
+/* =====================================
+   5. PORTFOLIO CONTAINER
+===================================== */
+
+.portfolio-container {
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* =====================================
+   6. PROFILE CARD
+===================================== */
+
+.profile-card {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid #475569;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+
+/* Profile Image */
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #38bdf8;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+
+/* Profile Name */
+
+.profile-card h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+
+/* Profile Bio */
+
+.bio {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* Profile Statistics */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.stats span {
+    background: #334155;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #e2e8f0;
+    font-size: 15px;
+}
+
+.stats strong {
+    color: #38bdf8;
+}
+
+
+/* GitHub Profile Link */
+
+.profile-card a {
+    display: inline-block;
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.profile-card a:hover {
+    color: #818cf8;
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   7. REPOSITORY HEADING
+===================================== */
+
+.portfolio-container h3 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    border-left: 4px solid #38bdf8;
+    padding-left: 15px;
+}
+
+
+/* =====================================
+   8. REPOSITORY GRID
+===================================== */
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =====================================
+   9. REPOSITORY CARD
+===================================== */
+
+.repo-card {
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid #475569;
+    border-radius: 15px;
+    padding: 25px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    border-color: #818cf8;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Repository Name */
+
+.repo-card h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.repo-card h4 a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.repo-card h4 a:hover {
+    color: #a5b4fc;
+    text-decoration: underline;
+}
+
+
+/* Repository Description */
+
+.repo-desc {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    overflow-wrap: anywhere;
+}
+
+
+/* Repository Information */
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #334155;
+}
+
+.repo-meta span {
+    font-size: 13px;
+    color: #cbd5e1;
+    background: #334155;
+    padding: 7px 10px;
+    border-radius: 6px;
+}
+
+
+/* =====================================
+   10. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .repo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        padding: 25px 15px;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .portfolio-container h3 {
+        font-size: 23px;
+    }
+}
+
+
+/* =====================================
+   11. SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 400px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-card h2 {
+        font-size: 23px;
+    }
+
+    .repo-card {
+        padding: 18px;
+    }
+
+    .stats span {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* FINAL BACKGROUND AND HEADING FIX */
+
+html {
+    min-height: 100%;
+    background: #0f172a !important;
+}
+
+body {
+    min-height: 100vh !important;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #312e81
+    ) !important;
+
+    color: #f1f5f9 !important;
+}
+
+/* Make heading visible */
+
+h1 {
+    color: #ffffff !important;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Fix heading decoration */
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+/* Center the search section */
+
+form {
+    margin: 30px auto;
+    max-width: 650px;
+}
+
